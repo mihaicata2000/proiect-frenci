@@ -1,0 +1,265 @@
+/* Basic Reset */
+body, h1, h2, h3, p, ul, li, form, input, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* Prevent scrollbars on main container */
+}
+
+/* Sidebar / UserList */
+.sidebar {
+  width: 250px;
+  min-width: 200px; /* Ensure sidebar doesn't get too small */
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-list {
+  padding: 15px;
+  overflow-y: auto; /* Allow scrolling if many users */
+  flex-grow: 1;
+}
+
+.user-list h2 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.user-list ul {
+  list-style-type: none;
+}
+
+.user-list li {
+  padding: 12px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.user-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.user-list li.selected { /* Style for selected user */
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+/* Main Chat Area */
+.main-chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+/* Chat Window */
+.chat-window {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto; /* Essential for scrollable messages */
+  display: flex;
+  flex-direction: column-reverse; /* New messages at the bottom */
+}
+
+.chat-window-inner { /* Add an inner div if you need to reverse content for scrolling */
+  display: flex;
+  flex-direction: column;
+}
+
+
+.chat-window h3 {
+  font-size: 1.1em;
+  color: #333;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.message-bubble {
+  margin-bottom: 12px;
+  padding: 10px 15px;
+  border-radius: 18px;
+  max-width: 75%;
+  line-height: 1.4;
+  word-wrap: break-word; /* Ensure long words don't break layout */
+}
+
+.message-bubble.sent {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px; /* Bubble tail effect */
+}
+
+.message-bubble.received {
+  background-color: #e9e9eb;
+  color: #333;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px; /* Bubble tail effect */
+}
+
+.message-bubble p {
+  margin: 0;
+}
+
+.message-bubble .sender-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 0.9em;
+}
+
+.message-bubble .message-content {
+  margin: 5px 0;
+}
+
+.message-bubble .timestamp {
+  font-size: 0.75em;
+  color: #888; /* Light gray for sent, slightly darker for received if needed */
+  text-align: right; /* Align timestamp to the right of the bubble */
+  margin-top: 5px;
+}
+.message-bubble.sent .timestamp {
+  color: #e0e0e0;
+}
+
+
+/* Message Input */
+.message-input-form {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+}
+
+.message-input-form input[type="text"] {
+  flex-grow: 1;
+  padding: 12px;
+  margin-right: 10px;
+  border-radius: 20px; /* Pill shape */
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.message-input-form input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.message-input-form button {
+  padding: 12px 20px;
+  border-radius: 20px; /* Pill shape */
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+}
+
+.message-input-form button:hover {
+  background-color: #0056b3;
+}
+
+.message-input-form button:disabled {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+/* Login/Username Input Screen */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f7f6;
+}
+
+.login-box {
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.login-box input[type="text"] {
+  padding: 12px;
+  margin: 15px 0;
+  width: 250px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+}
+
+.login-box input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.login-box button {
+  padding: 12px 25px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+}
+
+.login-box button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive considerations (very basic) */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Stack user list on top for small screens */
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .app-container {
+    flex-direction: column;
+  }
+  .main-chat-area {
+    /* height: calc(100vh - Xpx); Removed problematic calc */
+    flex-grow: 1; /* Allow it to take remaining height */
+  }
+
+  .chat-window {
+    padding: 10px;
+  }
+  .message-input-form {
+    padding: 10px;
+  }
+}

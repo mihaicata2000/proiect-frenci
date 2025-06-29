@@ -1,0 +1,35 @@
+
+> frontend@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled with warnings.
+
+static/css/main.af38de9e.css from Css Minimizer plugin
+postcss-calc:: Lexical error on line 1: Unrecognized text.
+
+  Erroneous area:
+1: 100vh - Xpx
+^..........^ webpack://./src/App.css:255:4
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  74.61 kB  build/static/js/main.56660eed.js
+  1.76 kB   build/static/js/453.670e15c7.chunk.js
+  1.24 kB   build/static/css/main.c40b93f6.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
